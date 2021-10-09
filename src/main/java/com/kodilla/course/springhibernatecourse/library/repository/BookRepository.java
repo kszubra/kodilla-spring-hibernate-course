@@ -1,8 +1,8 @@
-package com.kodilla.course.springhibernatecourse.security.repository;
+package com.kodilla.course.springhibernatecourse.library.repository;
 
 import java.util.List;
 
-import com.kodilla.course.springhibernatecourse.security.domain.Book;
+import com.kodilla.course.springhibernatecourse.library.domain.Book;
 
 public interface BookRepository {
 

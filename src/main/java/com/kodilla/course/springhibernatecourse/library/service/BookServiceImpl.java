@@ -1,9 +1,9 @@
-package com.kodilla.course.springhibernatecourse.security.service;
+package com.kodilla.course.springhibernatecourse.library.service;
 
 import java.util.List;
 
-import com.kodilla.course.springhibernatecourse.security.domain.Book;
-import com.kodilla.course.springhibernatecourse.security.repository.BookRepository;
+import com.kodilla.course.springhibernatecourse.library.domain.Book;
+import com.kodilla.course.springhibernatecourse.library.repository.BookRepository;
 
 import lombok.RequiredArgsConstructor;
 

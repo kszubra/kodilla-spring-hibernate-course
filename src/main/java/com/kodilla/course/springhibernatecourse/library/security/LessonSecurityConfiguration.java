@@ -1,4 +1,4 @@
-package com.kodilla.course.springhibernatecourse.security.security;
+package com.kodilla.course.springhibernatecourse.library.security;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -12,15 +12,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @ConditionalOnProperty(
         value = "security.config.profile",
-        havingValue = "TASK",
+        havingValue = "LESSON",
         matchIfMissing = true
 )
 @EnableWebSecurity
-public class TaskSecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class LessonSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final String R1 = "R1";
-    private final String R2 = "R2";
-    private final String R3 = "R3";
+    private final String ROLE_USER = "USER";
+    private final String ROLE_LIBRARIAN = "LIBRARIAN";
+    private final String ROLE_ADMIN = "ADMIN";
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
@@ -30,11 +30,11 @@ public class TaskSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("r1").password("r1").roles(R1)
+                .withUser("user").password("user").roles(ROLE_USER)
                 .and()
-                .withUser("r2").password("r2").roles(R2)
+                .withUser("librarian").password("librarian").roles(ROLE_LIBRARIAN)
                 .and()
-                .withUser("r3").password("r3").roles(R3);
+                .withUser("admin").password("admin").roles(ROLE_ADMIN);
     }
 
     @Override
@@ -43,11 +43,11 @@ public class TaskSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .mvcMatchers(HttpMethod.GET, "/**") //definiujemy wzorzec wywołań, dla którego chcemy założyć ograniczenie. począwszy od gałęzi /books "w głąb" wszystkie operacje GET będą ograniczone.
-                .hasAnyRole(R1, R2, R3) //definiujemy, kto może uzyskać dostęp
+                .hasAnyRole(ROLE_ADMIN, ROLE_LIBRARIAN, ROLE_USER) //definiujemy, kto może uzyskać dostęp
                 .mvcMatchers(HttpMethod.POST, "/**")
-                .hasAnyRole(R2, R2)
+                .hasAnyRole(ROLE_ADMIN, ROLE_LIBRARIAN)
                 .mvcMatchers(HttpMethod.DELETE, "/**")
-                .hasAnyRole(R1)
+                .hasAnyRole(ROLE_ADMIN)
                 .anyRequest()
                 .fullyAuthenticated() //dostęp do naszej aplikacji mają tylko osoby w pełni zautentykowane
                 .and()

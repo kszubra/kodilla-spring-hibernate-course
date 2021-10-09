@@ -1,4 +1,4 @@
-package com.kodilla.course.springhibernatecourse.security.domain;
+package com.kodilla.course.springhibernatecourse.library.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

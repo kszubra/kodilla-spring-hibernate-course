@@ -1,4 +1,4 @@
-package com.kodilla.course.springhibernatecourse.security.controller;
+package com.kodilla.course.springhibernatecourse.library.controller;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kodilla.course.springhibernatecourse.security.domain.BookDto;
-import com.kodilla.course.springhibernatecourse.security.domain.BookMapper;
-import com.kodilla.course.springhibernatecourse.security.service.BookService;
+import com.kodilla.course.springhibernatecourse.library.domain.BookDto;
+import com.kodilla.course.springhibernatecourse.library.domain.BookMapper;
+import com.kodilla.course.springhibernatecourse.library.service.BookService;
 
 import lombok.RequiredArgsConstructor;
 

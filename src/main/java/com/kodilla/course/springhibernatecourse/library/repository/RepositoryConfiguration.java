@@ -1,4 +1,4 @@
-package com.kodilla.course.springhibernatecourse.security.repository;
+package com.kodilla.course.springhibernatecourse.library.repository;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

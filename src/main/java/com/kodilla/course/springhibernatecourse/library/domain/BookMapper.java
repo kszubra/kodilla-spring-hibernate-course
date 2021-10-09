@@ -1,4 +1,4 @@
-package com.kodilla.course.springhibernatecourse.security.domain;
+package com.kodilla.course.springhibernatecourse.library.domain;
 
 import static java.util.stream.Collectors.toList;
 

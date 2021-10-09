@@ -1,9 +1,9 @@
-package com.kodilla.course.springhibernatecourse.security.service;
+package com.kodilla.course.springhibernatecourse.library.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.kodilla.course.springhibernatecourse.security.repository.BookRepository;
+import com.kodilla.course.springhibernatecourse.library.repository.BookRepository;
 
 @Configuration
 class BookServiceConfiguration {
