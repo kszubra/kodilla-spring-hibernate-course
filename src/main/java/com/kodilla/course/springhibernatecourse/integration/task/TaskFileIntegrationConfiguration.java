@@ -4,6 +4,7 @@ import static org.springframework.integration.file.support.FileExistsMode.REPLAC
 
 import java.io.File;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.dsl.IntegrationFlow;
@@ -14,8 +15,12 @@ import org.springframework.integration.file.FileWritingMessageHandler;
 
 import com.kodilla.course.springhibernatecourse.integration.FileTransformer;
 
+@ConditionalOnProperty(
+        value = "integration.config.profile",
+        havingValue = "TASK"
+)
 @Configuration
-public class FileIntegrationConfiguration {
+public class TaskFileIntegrationConfiguration {
 
     @Bean
     IntegrationFlow fileIntegrationFlow(
